@@ -2,13 +2,14 @@
 
 <div class="row row-cols-1 row-cols-md-2 g-4" >
 
-  <div class="col" *ngFor="let h of heroes">
-    <div class="card" >
+  <div class="col" *ngFor="let h of heroes; let i= index ">
+    <div class="card animated fadeIn fast">
       <img src="{{h.imagenes}}"   class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{h.nombre}}</h5>
         <p class="card-text">{{h.bio}}</p>
-        <button type="button" class="btn btn-primary">Ver mas</button>
+        <p class="card-text">Aparicion: {{h.aparicion}}</p>
+        <button (click)="verHeroe(i)" type="button" class="btn btn-primary">Ver mas</button>
       </div>
 
     </div>
